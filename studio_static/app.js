@@ -1797,7 +1797,7 @@ function renderDetail() {
     ? videoPlayerHtml(displayItem.local_url, "Video", { compact: false, extraClass: "detail-video-player" })
     : `<img class="detail-image" src="${escapeHtml(displayItem.local_url)}" alt="${escapeHtml(displayItem.prompt || displayItem.title || "Image")}" draggable="false" />`;
   const media = visualJob ? detailGenerationMediaHtml(visualJob, displayItem) : regularMedia;
-  const editAction = ["image", "video"].includes(displayItem.type) && !visualJob && item.source !== "upload-card"
+  const editAction = ["image", "video"].includes(displayItem.type) && !visualJob
     ? '<button class="detail-action edit-detail" type="button" aria-label="Edit image"><span class="detail-edit-glyph" aria-hidden="true">e</span></button>'
     : "";
   els.detailScreen.innerHTML = `
